@@ -18,8 +18,8 @@
 PurchasePopUpPresentor.show(contentView: someView,
                             title: "Your amazing title",
                             cancelHandler: {
-                //
-            })
+//User pressed cancel button
+})
         
 ```
 

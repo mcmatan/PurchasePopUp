@@ -3,7 +3,7 @@
 [![Pod version](https://img.shields.io/cocoapods/v/PurchasePopUp.svg?style=flat)](http://cocoadocs.org/docsets/PurchasePopUp)
 [![Language](https://img.shields.io/badge/language-swift-orange.svg?style=flat)](https://developer.apple.com/swift)
 
-<p align = "center"><img src="https://i.giphy.com/42EBtGFL6q5cas6Amz.gif" alt="ImageOpenTransition Icon"/></p>
+<p align = "center"><img src="https://media.giphy.com/media/8PvFv3lrOh1vEDh6zr/giphy.gif" alt="ImageOpenTransition Icon"/></p>
 
 
 ## Description

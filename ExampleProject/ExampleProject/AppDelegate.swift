@@ -1,6 +1,6 @@
 //
 //  AppDelegate.swift
-//  PurchasePopUp
+//  ExampleProject
 //
 //  Created by Matan Cohen on 2/27/18.
 //  Copyright © 2018 Matan. All rights reserved.

@@ -1,6 +1,6 @@
 //
 //  ViewController.swift
-//  PurchasePopUp
+//  ExampleProject
 //
 //  Created by Matan Cohen on 2/27/18.
 //  Copyright © 2018 Matan. All rights reserved.
@@ -9,7 +9,7 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -32,7 +32,7 @@ class ViewController: UIViewController {
         title.translatesAutoresizingMaskIntoConstraints = false
         description.translatesAutoresizingMaskIntoConstraints = false
         
-    
+        
         contentView.addSubview(title)
         contentView.addSubview(description)
         
@@ -46,12 +46,11 @@ class ViewController: UIViewController {
         
         return contentView
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-
+    
+    
 }
-

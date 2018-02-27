@@ -1,6 +1,6 @@
 //
-//  PurchasePopUpUITests.swift
-//  PurchasePopUpUITests
+//  ExampleProjectUITests.swift
+//  ExampleProjectUITests
 //
 //  Created by Matan Cohen on 2/27/18.
 //  Copyright © 2018 Matan. All rights reserved.
@@ -8,7 +8,7 @@
 
 import XCTest
 
-class PurchasePopUpUITests: XCTestCase {
+class ExampleProjectUITests: XCTestCase {
         
     override func setUp() {
         super.setUp()

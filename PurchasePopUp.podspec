@@ -1,4 +1,3 @@
-PodSpec example
 
 Pod::Spec.new do |s|
 

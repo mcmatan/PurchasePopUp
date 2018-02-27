@@ -1,0 +1,16 @@
+PODS:
+  - PurchasePopUp (0.0.1)
+
+DEPENDENCIES:
+  - PurchasePopUp (from `../`)
+
+EXTERNAL SOURCES:
+  PurchasePopUp:
+    :path: ../
+
+SPEC CHECKSUMS:
+  PurchasePopUp: 505a79decd5b8310d0a89b10832797644971cb8d
+
+PODFILE CHECKSUM: 8717b0c4e177c4199fae4deb1fcb9c66a2563e42
+
+COCOAPODS: 1.4.0

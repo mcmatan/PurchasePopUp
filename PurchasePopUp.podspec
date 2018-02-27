@@ -19,7 +19,7 @@ s.source            = {
 :tag => "#{s.version}" }
 
 s.framework = "UIKit"
-s.source_files      = 'PurchasePopUp*' , 'Vendor/*', 'Resource/*', 'PurchasePopUp/PurchasePopUp/*'
+s.source_files      = 'PurchasePopUp/*' , 'Vendor/*', 'Resource/*', 'PurchasePopUp/PurchasePopUp/*'
 s.requires_arc      = true
 
 end

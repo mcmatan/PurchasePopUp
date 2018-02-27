@@ -15,7 +15,9 @@
 ## Usage: EasyList
 
 ```Swift
-PurchasePopUpPresentor.show(contentView: someView, title: "Your amazing title", cancelHandler: {
+PurchasePopUpPresentor.show(contentView: someView,
+                            title: "Your amazing title",
+                            cancelHandler: {
                 //
             })
         

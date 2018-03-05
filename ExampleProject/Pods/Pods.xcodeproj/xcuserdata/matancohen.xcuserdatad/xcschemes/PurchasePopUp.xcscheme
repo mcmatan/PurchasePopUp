@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0930"
+   LastUpgradeVersion = "0700"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -13,11 +13,11 @@
             buildForProfiling = "YES"
             buildForArchiving = "YES">
             <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "64B277F2D6403B80C6F69788C4C1D366"
-               BlueprintName = "PurchasePopUp"
-               ReferencedContainer = "container:Pods.xcodeproj"
-               BuildableName = "PurchasePopUp.framework">
+               BuildableIdentifier = 'primary'
+               BlueprintIdentifier = '64B277F2D6403B80C6F69788C4C1D366'
+               BlueprintName = 'PurchasePopUp'
+               ReferencedContainer = 'container:Pods.xcodeproj'
+               BuildableName = 'PurchasePopUp.framework'>
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

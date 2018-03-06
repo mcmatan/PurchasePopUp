@@ -86,7 +86,7 @@ open class PurchasePopUpPresentor: UIView {
         static let barButtonFixedSpacePadding: CGFloat = 0.04
     }
     
-    init(contentView: UIView, title: String) {
+    public init(contentView: UIView, title: String) {
         self.contentView = contentView
         self.title = title
         super.init(frame: .zero)
@@ -103,7 +103,7 @@ open class PurchasePopUpPresentor: UIView {
         PurchasePopUpPresentor(contentView: contentView, title: title).show(cancelHandler: cancelHandler)
     }
     
-    private func show(cancelHandler:@escaping () -> Void) {
+    open func show(cancelHandler:@escaping () -> Void) {
         self.cancelHandler = cancelHandler
         animateViews(direction: .in)
     }
@@ -138,7 +138,7 @@ open class PurchasePopUpPresentor: UIView {
         self.addSubview(backgroundView)
     }
     
-    internal func dismissViews() {
+    open func dismissViews() {
         if isPopoverMode {
             purchasePopUpViewController?.dismiss(animated: true, completion: nil)
             purchasePopUpViewController = nil // Release, as to not create a retain cycle.

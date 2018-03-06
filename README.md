@@ -14,11 +14,26 @@
 
 ## Usage: EasyList
 
+As Static
+
 ```Swift
 PurchasePopUpPresentor.show(contentView: someView,
                             title: "Your amazing title",
                             cancelHandler: {
 //User pressed cancel button
+})
+
+
+As Instance veriable
+
+```Swift
+self.purchasePopUpPresentor = PurchasePopUpPresentor(contentView: contentView, title: title)
+        self.purchasePopUpPresentor?.show(cancelHandler: {
+            //User pressed cancel button
+        })
+        
+ //Dismiss
+self.purchasePopUpPresentor?.dismissViews()
 })
         
 ```

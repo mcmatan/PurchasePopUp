@@ -19,9 +19,13 @@ class ViewController: UIViewController {
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
             
             let someView = self.getContentView()
+            let purchasePopup = PurchasePopUpPresentor(contentView: someView, title: "Modal Title", cancelButtonTitle: "Dismiss!")
+            purchasePopup.cancelButtonFont = UIFont.boldSystemFont(ofSize: 12)
+            purchasePopup.titleFont = UIFont.boldSystemFont(ofSize: 26)
+
             
-            PurchasePopUpPresentor.show(contentView: someView, title: "Your amazing title", cancelHandler: {
-                //
+            purchasePopup.show(cancelHandler: {
+                
             })
         }
     }

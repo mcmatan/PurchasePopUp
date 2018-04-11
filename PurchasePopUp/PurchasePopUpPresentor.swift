@@ -46,11 +46,30 @@ open class PurchasePopUpPresentor: UIView {
     public var toolbarBarTintColor: UIColor? {
         didSet { toolbar.barTintColor = toolbarBarTintColor }
     }
+    
     public var toolbarItemsFont: UIFont? {
         didSet {
             applyToolbarButtonItemsSettings { (barButtonItem) in
-                //                barButtonItem.setTitleTextAttributes([.font: toolbarItemsFont!], for: .normal)
+                barButtonItem.setTitleTextAttributes([.font: toolbarItemsFont!], for: .normal)
+                barButtonItem.setTitleTextAttributes([.font: toolbarItemsFont!], for: .highlighted)
             }
+        }
+    }
+    
+    public var cancelButtonFont: UIFont? {
+        didSet {
+            applyToolbarButtonItemsSettings(withAction: #selector(PurchasePopUpPresentor.cancel)) { (barButtonItem) in
+                barButtonItem.setTitleTextAttributes([.font: cancelButtonFont!], for: .normal)
+                barButtonItem.setTitleTextAttributes([.font: cancelButtonFont!], for: .highlighted)
+            }
+        }
+    }
+    
+    public var titleFont: UIFont? {
+        didSet {
+            guard let isTitleButton = self.titleButton else { return }
+            isTitleButton.setTitleTextAttributes([.font: titleFont!], for: .normal)
+            isTitleButton.setTitleTextAttributes([.font: titleFont!], for: .highlighted)
         }
     }
     
@@ -60,9 +79,12 @@ open class PurchasePopUpPresentor: UIView {
 
     internal let backgroundView: UIView = UIView()
     internal let toolbar: UIToolbar = UIToolbar()
+    internal var titleButton: PurchasePopUpBarButtonItem?
+    internal var cancelButton: PurchasePopUpBarButtonItem?
     internal var isPopoverMode = false
     internal let contentView: UIView
     internal let title: String
+    internal var cancelButtonTitle: String?
     internal var purchasePopUpViewController: PurchasePopUpViewController?
     internal enum AnimationDirection {
         case `in`, out // swiftlint:disable:this identifier_name
@@ -86,9 +108,10 @@ open class PurchasePopUpPresentor: UIView {
         static let barButtonFixedSpacePadding: CGFloat = 0.04
     }
     
-    public init(contentView: UIView, title: String) {
+    public init(contentView: UIView, title: String, cancelButtonTitle: String? = nil) {
         self.contentView = contentView
         self.title = title
+        self.cancelButtonTitle = cancelButtonTitle
         super.init(frame: .zero)
         setup()
     }
@@ -195,8 +218,11 @@ open class PurchasePopUpPresentor: UIView {
         tapGestureRecognizer.delegate = self
         self.addGestureRecognizer(tapGestureRecognizer)
         
+        self.titleButton = PurchasePopUpBarButtonItem.title(title: self.title)
+        self.cancelButton = PurchasePopUpBarButtonItem.cancel(purchasePopUpPresentor: self, title: self.cancelButtonTitle, barButtonSystemItem: .cancel)
+        
         let fixedSpace = PurchasePopUpBarButtonItem.fixedSpace(width: appWindow.bounds.size.width * Constant.barButtonFixedSpacePadding)
-        setToolbarItems(items: [fixedSpace, PurchasePopUpBarButtonItem.title(title: self.title), PurchasePopUpBarButtonItem.flexibleSpace() ,PurchasePopUpBarButtonItem.cancel(purchasePopUpPresentor: self), fixedSpace])
+        setToolbarItems(items: [fixedSpace, titleButton!, PurchasePopUpBarButtonItem.flexibleSpace() ,cancelButton!, fixedSpace])
         
         self.backgroundColor = UIColor.black.withAlphaComponent(Constant.backgroundAlpha)
         backgroundView.backgroundColor = UIColor.white
